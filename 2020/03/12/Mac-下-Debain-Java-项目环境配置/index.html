@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Mac-下-Debain-Java-项目环境配置 | Aier.Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="通用命令  1. 连接服务器ssh root@ip            2. 上传文件 scp xxx.tar.gz root@ip:&#x2F;usr&#x2F;local&#x2F;            3. 解压：tar -zxvf xxx.tar.gz [ v : 显示过程，f ：文件，x ：解压，c 代表压缩，z : gz 压缩方式，j 代表 bzip]            4. 配置环境变量：vim &#x2F;etc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac-下-Debain-Java-项目环境配置">
+<meta property="og:url" content="http://yoursite.com/2020/03/12/Mac-%E4%B8%8B-Debain-Java-%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="Aier.Blog">
+<meta property="og:description" content="通用命令  1. 连接服务器ssh root@ip            2. 上传文件 scp xxx.tar.gz root@ip:&#x2F;usr&#x2F;local&#x2F;            3. 解压：tar -zxvf xxx.tar.gz [ v : 显示过程，f ：文件，x ：解压，c 代表压缩，z : gz 压缩方式，j 代表 bzip]            4. 配置环境变量：vim &#x2F;etc">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-12T10:48:18.000Z">
+<meta property="article:modified_time" content="2020-03-12T10:48:18.000Z">
+<meta property="article:author" content="Aier">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Aier.Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Aier.Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">All Do Simple</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Mac-下-Debain-Java-项目环境配置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/12/Mac-%E4%B8%8B-Debain-Java-%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="article-date">
+  <time datetime="2020-03-12T10:48:18.000Z" itemprop="datePublished">2020-03-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Mac-下-Debain-Java-项目环境配置
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="通用命令"><a href="#通用命令" class="headerlink" title="通用命令"></a>通用命令</h2><ol>
+<li><p>连接服务器ssh root@ip</p>
+</li>
+<li><p>上传文件 scp xxx.tar.gz root@ip:/usr/local/</p>
+</li>
+<li><p>解压：tar -zxvf xxx.tar.gz [ v : 显示过程，f ：文件，x ：解压，c 代表压缩，z : gz 压缩方式，j 代表 bzip]</p>
+</li>
+<li><p>配置环境变量：vim /etc/profile</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export XXX_HOME &#x3D; 路径</span><br><span class="line">export PATH&#x3D;$&#123;PATH&#125;:$&#123;XXX_HOME&#125;&#x2F;bin</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>防火墙设置</p>
+<p>ufw（debain 默认安装，默认关闭）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">开启：sudou ufw enable</span><br><span class="line">关闭：sudo ufw disable</span><br><span class="line">查看状态：ufw status &#x2F;&#x2F; 已关闭显示 inactive</span><br><span class="line">开放端口：ufw allow 22&#x2F;tcp</span><br><span class="line">删除端口：ufw delete allow 8080</span><br><span class="line">查看端口：ufw status</span><br></pre></td></tr></table></figure>
+
+<p>firewall（centos 默认安装）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">开启： systemctl start firewalld</span><br><span class="line">关闭：systemctl disable firewalld</span><br><span class="line">查看状态：sudo firewall-cmd --state</span><br><span class="line">加入服务：sudo firewall-cmd --zone&#x3D;public --permanent --add-service&#x3D;mysql</span><br><span class="line">开放端口：sudo firewall-cmd --zone&#x3D;public --add-port&#x3D;&#123;8080,8443&#125;&#x2F;tcp --permanent</span><br><span class="line">查看端口：sudo firewall-cmd --list-all</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<h2 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h2><ol>
+<li>上传解压即可</li>
+</ol>
+<h2 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h2><ol>
+<li><p>上传解压</p>
+</li>
+<li><p>vim /etc/profile</p>
+</li>
+<li><p>添加配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MAVEN_HOME&#x3D;&#x2F;usr&#x2F;local&#x2F;maven&#x2F;maven3</span><br><span class="line">export MAVEN_HOME</span><br><span class="line">export PATH&#x3D;$&#123;PATH&#125;:$&#123;MAVEN_HOME&#125;&#x2F;bin</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h2><ol>
+<li><p>上传解压</p>
+</li>
+<li><p>vim /etc/profile </p>
+</li>
+<li><p>添加配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME&#x3D;&#x2F;usr&#x2F;local&#x2F;java&#x2F;jdk1.8 </span><br><span class="line">export JRE_HOME&#x3D;$&#123;JAVA_HOME&#125;&#x2F;jre  </span><br><span class="line">export CLASSPATH&#x3D;.:$&#123;JAVA_HOME&#125;&#x2F;lib:$&#123;JRE_HOME&#125;&#x2F;lib  </span><br><span class="line">export  PATH&#x3D;$&#123;JAVA_HOME&#125;&#x2F;bin:$PATH</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install nginx</span><br><span class="line">sudo ufw allow &#39;Nginx HTTP&#39; &#x2F;&#x2F; 开放端口</span><br></pre></td></tr></table></figure>
+
+<h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$sudo apt-get update</span><br><span class="line">$sudo apt-get install redis-server</span><br><span class="line">redis-cli &#x2F;&#x2F; 启动</span><br><span class="line">&#x2F;etc&#x2F;redis&#x2F;redis-server.conf</span><br><span class="line">bind-address &#x3D; 0.0.0.0 &#x2F;&#x2F; 开启远程访问，默认为127.0.0.1只能本地访问</span><br></pre></td></tr></table></figure>
+
+<h2 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 下载安装</span><br><span class="line">sudo apt install curl</span><br><span class="line">curl https:&#x2F;&#x2F;www.mongodb.org&#x2F;static&#x2F;pgp&#x2F;server-4.0.asc | sudo apt-key add -</span><br><span class="line"></span><br><span class="line">sudo vim &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;mongodb-org-4.0.list</span><br><span class="line">deb http:&#x2F;&#x2F;repo.mongodb.org&#x2F;apt&#x2F;debian stretch&#x2F;mongodb-org&#x2F;4.0 main</span><br><span class="line">		</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt-get install mongodb-org</span><br><span class="line"></span><br><span class="line"># 配置服务启动</span><br><span class="line">sudo systemctl enable mongod</span><br><span class="line">sudo systemctl start mongod</span><br><span class="line">sudo systemctl status mongod	</span><br><span class="line"></span><br><span class="line"># 配置文件重启</span><br><span class="line">sudo vim &#x2F;etc&#x2F;mongod.conf</span><br><span class="line">  bindIp: 0.0.0.0</span><br><span class="line">sudo systemctl restart mongod</span><br></pre></td></tr></table></figure>
+
+<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;mysql-apt-config_0.8.9-1_all.deb</span><br><span class="line">sudo dpkg -i .&#x2F;mysql-apt-config_0.8.9-1_all.deb</span><br><span class="line">点击 OK</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install mysql-server</span><br><span class="line">结束输入 Root 密码</span><br><span class="line">&#x2F;etc&#x2F;mysql&#x2F;mysql.conf.d&#x2F;xx.cnf</span><br><span class="line">bind-address &#x3D; 0.0.0.0 &#x2F;&#x2F; 开启远程访问，默认为127.0.0.1只能本地访问</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/12/Mac-%E4%B8%8B-Debain-Java-%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" data-id="ck7omypc90003rlqw0yon765u" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/03/12/SSM%EF%BC%8CSSH%E9%A1%B9%E7%9B%AEMaven%E9%85%8D%E7%BD%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          SSM，SSH项目Maven配置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/03/12/%E3%80%90%E6%9E%81%E7%AE%80%E6%95%99%E7%A8%8B%E3%80%91%E5%B0%8F%E7%B1%B3%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%AE%89%E8%A3%85-Mac-10-15-%E7%B3%BB%E7%BB%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【极简教程】小米笔记本安装-Mac-10-15-系统</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/03/12/Gitblit-%E6%90%AD%E5%BB%BA%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93/">Gitblit-搭建私有仓库</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/12/PS-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">PS-常用快捷键</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/12/SSM%EF%BC%8CSSH%E9%A1%B9%E7%9B%AEMaven%E9%85%8D%E7%BD%AE/">SSM，SSH项目Maven配置</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/12/Mac-%E4%B8%8B-Debain-Java-%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">Mac-下-Debain-Java-项目环境配置</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/12/%E3%80%90%E6%9E%81%E7%AE%80%E6%95%99%E7%A8%8B%E3%80%91%E5%B0%8F%E7%B1%B3%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%AE%89%E8%A3%85-Mac-10-15-%E7%B3%BB%E7%BB%9F/">【极简教程】小米笔记本安装-Mac-10-15-系统</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Aier<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
